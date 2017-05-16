@@ -42,7 +42,18 @@ public class SubitemDAOImpl extends AbstractDAO implements ISubitemDAO {
 		return super.pstmt.executeUpdate() > 0 ;
 	}
 
-	
+	@Override
+	public boolean doRemove(Integer id) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean doRemoveBatch(Set<Integer> ids) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	@Override
 	public Subitem findById(Integer id) throws SQLException {
 		String sql = "SELECT sid,iid,title FROM subitem WHERE sid=?" ;
@@ -57,19 +68,6 @@ public class SubitemDAOImpl extends AbstractDAO implements ISubitemDAO {
 			return vo ;
 		}
 		return null;
-	}
-
-	
-	@Override
-	public boolean doRemove(Integer id) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean doRemoveBatch(Set<Integer> ids) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override

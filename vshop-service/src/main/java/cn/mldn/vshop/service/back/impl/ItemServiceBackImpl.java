@@ -18,17 +18,16 @@ public class ItemServiceBackImpl extends AbstractService
 			IItemServiceBack {
 	@Override
 	public Map<Item, List<Subitem>> listDetails() throws Exception {
-		Map<Item, List<Subitem>> map = new HashMap<>();
+		Map<Item, List<Subitem>> map = new HashMap<Item, List<Subitem>>() ;
 		IItemDAO itemDAO = Factory.getDAOInstance("item.dao");
 		ISubitemDAO subitemDAO = Factory.getDAOInstance("subitem.dao");
-		List<Item> allItems = itemDAO.findAll();//查询出所有的一级菜单
-		Iterator<Item> iter = allItems.iterator();
+		List<Item> allItems = itemDAO.findAll() ;	// 查询出所有的一级栏目
+		Iterator<Item> iter = allItems.iterator() ;
 		while (iter.hasNext()) {
-			Item item = iter.next();
-			map.put(item, subitemDAO.findAllByItem(item.getIid()));
+			Item item = iter.next() ;
+			map.put(item, subitemDAO.findAllByItem(item.getIid())) ;
 		}
-		
-		return map;
+		return map ;
 	}
 	@Override
 	public boolean edit(Item vo) throws Exception {

@@ -21,7 +21,6 @@ public class AdminLoginFilter implements Filter {
 
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
 			throws IOException, ServletException {

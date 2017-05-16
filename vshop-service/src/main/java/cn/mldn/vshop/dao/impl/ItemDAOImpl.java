@@ -27,7 +27,17 @@ public class ItemDAOImpl extends AbstractDAO implements IItemDAO {
 		return super.pstmt.executeUpdate() > 0 ;
 	}
 
-	
+	@Override
+	public boolean doRemove(Integer id) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean doRemoveBatch(Set<Integer> ids) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 	@Override
 	public Item findById(Integer id) throws SQLException {
@@ -59,18 +69,6 @@ public class ItemDAOImpl extends AbstractDAO implements IItemDAO {
 		return all;
 	}
 
-	@Override
-	public boolean doRemove(Integer id) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean doRemoveBatch(Set<Integer> ids) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
 	@Override
 	public List<Item> findAllSplit(Integer currentPage, Integer lineSize)
 			throws SQLException {

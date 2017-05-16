@@ -18,6 +18,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 public class ItemActionBack extends AbstractBaseAction {
+	
 	public void listDetails() {
 		if (super.isRoleAndAction("goods", "goods:item")) {
 			IItemServiceBack itemService = Factory.getServiceInstance("item.service.back") ;
@@ -51,6 +52,7 @@ public class ItemActionBack extends AbstractBaseAction {
 			super.print(false) ;
 		}
 	}
+	
 	public void edit(Item vo) {
 		if (super.isRoleAndAction("goods", "goods:item")) {
 			try {
@@ -83,41 +85,4 @@ public class ItemActionBack extends AbstractBaseAction {
 		}
 		return null;
 	}
-	/*public void listDetails(){
-		if (super.isRoleAndAction("goods", "goods:item")) {
-			IItemServiceBack itemService = Factory.getServiceInstance("item.service.back") ;
-			try {
-				Map<Item, List<Subitem>> map = itemService.listDetails();
-				JSONObject all = new JSONObject();//总的json数据集合
-				JSONArray itemArray = new JSONArray();
-				//取出map集合中的一级二级菜单内容
-				Iterator<Map.Entry<Item, List<Subitem>>> iter = map.entrySet().iterator();
-				while (iter.hasNext()) {
-					Map.Entry<Item,List<Subitem>> me = iter.next();
-					JSONObject itemObj = new JSONObject();
-					itemObj.put("item", me.getKey());//设置一级菜单
-					JSONArray subitemArr = new JSONArray();
-					Iterator<Subitem> subIter = me.getValue().iterator();
-					while (subIter.hasNext()) {//存放此一级菜单下的所有二级菜单
-						subitemArr.add(subIter.next());
-					}
-					itemObj.put("subitems", subitemArr);
-					itemArray.add(itemObj);//存放所有的二级菜单
-				}
-				all.put("items", itemArray);
-				File file = new File(ServletObjectUtil.getServletContext().getRealPath("/item.json"));
-				PrintWriter out = new PrintWriter(new FileWriter(file));
-				out.print(all);
-				out.close();
-				super.print(true);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-		}else {
-			super.print(false);
-		}
-	}*/
-	
-	
 }

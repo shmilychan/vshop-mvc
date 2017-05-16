@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.mldn.util.factory.Factory;
+import cn.mldn.util.web.ServletObjectUtil;
 import cn.mldn.vshop.service.front.IMemberServiceFront;
 import cn.mldn.vshop.util.cookie.RememberMeUtil;
 @WebFilter("/*") 

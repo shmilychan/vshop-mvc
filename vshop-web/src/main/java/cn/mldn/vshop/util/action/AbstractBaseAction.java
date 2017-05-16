@@ -12,7 +12,6 @@ public abstract class AbstractBaseAction {
 	 * @param role 角色标记
 	 * @return 如果具备有此角色返回true，否则返回false
 	 */
-	@SuppressWarnings("unchecked")
 	public boolean isRole(String role) {
 		Set<String> allRoles = (Set<String>) ServletObjectUtil.getSession().getAttribute("allRoles") ;
 		return allRoles.contains(role) ;
@@ -22,7 +21,6 @@ public abstract class AbstractBaseAction {
 	 * @param action 权限标记
 	 * @return 具备权限返回true
 	 */
-	@SuppressWarnings("unchecked")
 	public boolean isAction(String action) {
 		Set<String> allActions = (Set<String>) ServletObjectUtil.getSession().getAttribute("allActions") ;
 		return allActions.contains(action) ;

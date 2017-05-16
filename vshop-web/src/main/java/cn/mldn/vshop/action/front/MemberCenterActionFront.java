@@ -1,5 +1,6 @@
 package cn.mldn.vshop.action.front;
 
+import cn.mldn.util.action.ActionMessageUtil;
 import cn.mldn.util.enctype.PasswordUtil;
 import cn.mldn.util.factory.Factory;
 import cn.mldn.util.web.ModelAndView;
