@@ -8,7 +8,7 @@ public class DatabaseConnection {
 	private static final String DRIVER = "org.gjt.mm.mysql.Driver";
 	private static final String URL = "jdbc:mysql://localhost:3306/vshop";
 	private static final String USER = "root";
-	private static final String PASSWORD = "root";
+	private static final String PASSWORD = "mysqladmin";
 	private static ThreadLocal<Connection> threadLocal = new ThreadLocal<Connection>();
 	public static Connection getConnection() {
 		Connection conn = threadLocal.get();
